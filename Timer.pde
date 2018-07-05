@@ -13,7 +13,7 @@ class Timer {
     int sec = millis / 1000;
 
     String minute = nf(sec / 60, 2, 0);
-    String second = nf(sec % 50, 2, 0);
+    String second = nf(sec % 60, 2, 0);
     return minute + ":" + second;
   }
 
