@@ -2,6 +2,7 @@ class LTList {
   class Content {
     Mode mode = Mode.Opening;
     Speaker speaker = null;
+    String info = "";
     Content(Mode mode, Speaker speaker){
       this.mode = mode;
       this.speaker = speaker;
@@ -35,6 +36,7 @@ class LTList {
       println(co[0],co[1],co[2]);
       if(co[0].equals("")){
         Content breakTime = new Content(Mode.BreakTime, null);
+        breakTime.info = co[2];
         contents.add(breakTime);
       } else {
         Speaker speaker = new Speaker(int(co[0]), co[1], co[2]);
