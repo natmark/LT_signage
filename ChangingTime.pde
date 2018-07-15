@@ -3,6 +3,7 @@ class ChangingTime {
   }
   void draw(){
     LTList.Speaker speaker = ltList.current().speaker;
+    fill(255);
     textAlign(LEFT, TOP);
     textFont (font);
     text("▶ next", 100, 50);
