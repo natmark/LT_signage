@@ -21,6 +21,7 @@ class LTList {
 
   ArrayList<Speaker> speakers = new ArrayList<Speaker>();
   ArrayList<Content> contents = new ArrayList<Content>();
+  int index = 0;
 
   LTList(String filename){
     Content opening = new Content(Mode.Opening, null);
@@ -51,12 +52,16 @@ class LTList {
   }
   
   Content current() {
-    if(contents.size() == 0){ return null; }
-    return contents.get(0);
+    return contents.get(index);
+  }
+  
+  void prev() {
+    if(0 >= index) { return; }
+    index -= 1;
   }
 
   void next() {
-    if(contents.size() == 1){ return; }
-    contents.remove(0);
+    if(contents.size() - 1 <= index) { return; }
+    index += 1;
   }
 }
