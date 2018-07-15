@@ -9,6 +9,7 @@ LTList ltList;
 PImage header;
 PFont font;
 PFont largeFont;
+PFont veryLargeFont;
 
 void setup(){
   background(0);
@@ -16,8 +17,11 @@ void setup(){
   // size(800,600);
   timer.startTimer();
   header = loadImage("main-visual.jpg");
-  font = createFont("Arial", 64, true);
-  largeFont = createFont("Arial", 80, true);
+  
+  int baseSize = min(width, height);
+  font = createFont("Arial", baseSize / 14, true);
+  largeFont = createFont("Arial", baseSize / 12, true);
+  veryLargeFont = createFont("Arial", baseSize / 4, true);
   opening = new Opening(header);
   closing = new Closing(header);
   ltList = new LTList("timetable.csv");
