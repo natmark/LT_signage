@@ -9,8 +9,7 @@ class LTTime {
 
     fill(255);
     textAlign(CENTER);
-    textSize(360);
-    
+    textFont(veryLargeFont);
     fill(255);
     if(timer.isOverMaxTime()){
       fill(255, 0, 0);
