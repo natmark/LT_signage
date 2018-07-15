@@ -46,6 +46,12 @@ void draw(){
 }
 
 void keyPressed(){
+  if(keyCode == 37){ // Left
+    ltList.prev();
+    if(ltList.current().mode == Mode.LTTime){
+      timer.startTimer();
+    }    
+  }
   if(keyCode == 39){ // Right
     ltList.next();
     if(ltList.current().mode == Mode.LTTime){
